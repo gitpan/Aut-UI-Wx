@@ -7,6 +7,7 @@
 package testApp;
 
 BEGIN { print "1..?\n"; }
+END   { exit(0); }
 
 my $tcount=0;
 sub tt {
@@ -130,21 +131,6 @@ package main;
 my $a= new testApp;
 $a->MainLoop();
 
-
-
-
-
-
-  
-#   tt("Testing symmetric encryption");
-
-#   if ($text eq $dtext) {
-#     print "encryption/decryption = symmetric, ok\n";
-#   }
-# }
-
-# ok();
-
 ################################################################
 # Post message
 ################################################################
@@ -164,6 +150,7 @@ authorization levels. Try e.g.:
 etc.
 
 EOF
+
 
 
 

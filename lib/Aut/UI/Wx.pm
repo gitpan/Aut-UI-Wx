@@ -7,7 +7,7 @@ use Aut;
 use Aut::Ticket;
 use Wx qw(:everything);
 
-our $VERSION='0.01';
+our $VERSION='0.02';
 
 #####################################################
 # Instantiation/Initialization

@@ -44,7 +44,7 @@ sub __set_properties {
 # begin wxGlade: __Aut__YesNo::__set_properties
 
 	$self->SetTitle(_T("Yes No"));
-#	$self->{yn_yes}->SetDefault();
+	$self->{yn_yes}->SetDefault();
 
 # end wxGlade
 	$self->{yn_no}->SetDefault();
@@ -274,7 +274,7 @@ sub __do_layout {
 
 	$self->{sizer_4} = Wx::FlexGridSizer->new(3, 1, 0, 0);
 	$self->{grid_sizer_6} = Wx::GridSizer->new(1, 2, 5, 5);
-	$self->{grid_sizer_5} = Wx::GridSizer->new(2, 1, 5, 5);
+	$self->{grid_sizer_5} = Wx::FlexGridSizer->new(2, 1, 5, 5);
 	$self->{grid_sizer_5}->Add($self->{txtLabel}, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	$self->{grid_sizer_5}->Add($self->{txtEntry}, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);
 	$self->{sizer_4}->Add($self->{grid_sizer_5}, 1, wxEXPAND, 0);
@@ -313,6 +313,7 @@ sub set_label {
   my $minsize=new Wx::Size($x+2*$borderwidth,$y+2*$borderwidth);
 
   $self->{'grid_sizer_5'}->SetMinSize($minsize);
+  $self->{'grid_sizer_5'}->SetItemMinSize($self->{'txtLabel'},$x,$y);
 
   $self->SetAutoLayout(1);
   $self->SetSizerAndFit($self->{sizer_4},0);
